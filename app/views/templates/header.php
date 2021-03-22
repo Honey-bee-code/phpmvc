@@ -20,6 +20,9 @@
           <a class="nav-link " id="nav" href="<?=BASEURL?>/index">Home</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link " id="nav" href="<?=BASEURL?>/siswa">Siswa</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link " id="nav" href="<?=BASEURL?>/about">About</a>
         </li>
         
