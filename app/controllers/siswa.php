@@ -20,4 +20,13 @@ class Siswa extends Controller{
         $this->view('siswa/detail', $data);
         $this->view('templates/footer');
     }
+
+    public function tambah()
+    {
+        // var_dump($_POST);
+        if($this->model('Siswa_model')->tambah_siswa($_POST) > 0){
+            header('Location: ' . BASEURL . '/siswa');
+            exit;
+        }
+    }
 }

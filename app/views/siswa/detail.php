@@ -5,7 +5,7 @@
             <h6 class="card-subtitle mb-2 text-muted"><?=$data['siswa']['nis']?></h6>
             <p class="card-text"><?=$data['siswa']['email']?></p>
             <p class="card-text">Kelas : <?=$data['siswa']['kelas']?></p>
-            <a href="<?=BASEURL?>/siswa" class="card-link">Kembali</a>
+            <a href="<?=BASEURL?>/siswa" class="card-link"><span class="badge bg-info text-dark">Kembali</span></a>
         </div>
     </div>
 </div>

@@ -1,7 +1,6 @@
 <?php
 
 class Siswa_model {
-    private $table = 'siswa';
     private $db;
 
     public function __construct()
@@ -11,14 +10,28 @@ class Siswa_model {
 
     public function get_all_siswa()
     {
-        $this->db->query('SELECT * FROM '.$this->table);
+        $this->db->query('SELECT * FROM siswa');
         return $this->db->resultSet();
     }
 
     public function get_detail($id)
     {
-        $this->db->query('SELECT * FROM '.$this->table. ' WHERE id = :id');
+        $this->db->query('SELECT * FROM siswa WHERE id = :id');
         $this->db->bind('id', $id);
         return $this->db->single();
+    }
+
+    public function tambah_siswa($data)
+    {
+        $query = "INSERT INTO siswa VALUES (null , :nama, :nis, :email, :kelas)";
+        $this->db->query($query);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('nis', $data['nis']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('kelas', $data['kelas']);
+        
+        $this->db->execute();
+
+        return $this->db->hitung_baris();
     }
 }
