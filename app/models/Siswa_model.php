@@ -43,4 +43,21 @@ class Siswa_model {
         $this->db->execute();
         return $this->db->hitung_baris();
     }
+
+    public function ubah_siswa($data)
+    {
+        $query = "UPDATE siswa SET nama = :nama, nis = :nis, email = :email, kelas = :kelas WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id', $data['id']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('nis', $data['nis']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('kelas', $data['kelas']);
+        
+        $this->db->execute();
+
+        return $this->db->hitung_baris();
+    }
+
+
 }

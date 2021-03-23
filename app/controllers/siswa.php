@@ -53,4 +53,27 @@ class Siswa extends Controller{
             exit;
         }
     }
+
+    public function detail_ubah()
+    {
+        $id = $_POST['id'];
+        $data = $this->model('Siswa_model')->get_detail($id);
+        echo json_encode($data);
+    }
+
+    public function ubah()
+    {
+        if($this->model('Siswa_model')->ubah_siswa($_POST) > 0){
+            // set flash message
+            Flasher::setFlash('Berhasil', 'diubah', 'success');
+
+            header('Location: ' . BASEURL . '/siswa');
+            exit;
+        } else {
+            Flasher::setFlash('Gagal', 'diubah', 'danger');
+
+            header('Location: ' . BASEURL . '/siswa');
+            exit;
+        }
+    }
 }

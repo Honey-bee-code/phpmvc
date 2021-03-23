@@ -8,5 +8,6 @@
     $('a[href="' + url + '"]').addClass('active'); 
     });
     </script>
+    <script src="<?=BASEURL?>/js/script.js"></script>
 </body>
 </html>
