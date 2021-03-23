@@ -9,7 +9,17 @@
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal" id="tombolTambah">
             Tambah Data Siswa
             </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
             <hr>
+            <form action="<?=BASEURL?>/siswa/cari" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Ketik nama siswa.." name="keyword" id="keyword" autocomplete="off" value="<?=$_POST['keyword']?>" >
+                    <button type="submit" class="btn btn-outline-primary" id="tombolCari">Cari</button>
+                </div>
+            </form>
             <h3>Data Siswa</h3>
             <ul class="list-group">
                 <?php foreach($data['siswa'] as $siswa) : ?>

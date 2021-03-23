@@ -59,5 +59,14 @@ class Siswa_model {
         return $this->db->hitung_baris();
     }
 
+    public function cari_siswa()
+    {
+        $key = $_POST['keyword'];
+        $query = "SELECT * FROM siswa WHERE nama LIKE :key"; // tanda % tidak bisa jalan jika pakai PDO
+        $this->db->query($query);
+        $this->db->bind('key', "%$key%");
+        return $this->db->resultSet();
+    }
+
 
 }
