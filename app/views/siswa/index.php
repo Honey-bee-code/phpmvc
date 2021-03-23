@@ -13,9 +13,11 @@
             <h3>Data Siswa</h3>
             <ul class="list-group">
                 <?php foreach($data['siswa'] as $siswa) : ?>
-                <li class="list-group-item d-flex justify-content-between"><?=$siswa['nama']?> 
-                    
-                    <a href="<?=BASEURL?>/siswa/detail/<?=$siswa['id']?>" ><span class="badge bg-primary">Detail</span></a>
+                <li class="list-group-item d-flex justify-content-between"><?=$siswa['nama']?>
+                    <div>
+                        <a href="<?=BASEURL?>/siswa/detail/<?=$siswa['id']?>" ><span class="badge bg-primary">Detail</span></a>
+                        <a href="<?=BASEURL?>/siswa/hapus/<?=$siswa['id']?>" onclick="return confirm('Yakin')" ><span class="badge bg-danger">Hapus</span></a>
+                    </div> 
                 </li>
                 <?php endforeach ?>
             </ul>
